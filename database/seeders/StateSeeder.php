@@ -12,6 +12,14 @@ class StateSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $states = [
+            'Odisha',
+            'West Bengal',
+            'Jharkhand'
+        ];
+
+        foreach ($states as $state) {
+            \App\Models\State::create(['state_name' => $state]);
+        }
     }
 }
