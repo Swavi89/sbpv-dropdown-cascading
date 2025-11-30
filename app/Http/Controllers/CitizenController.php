@@ -16,12 +16,8 @@ class CitizenController extends Controller
      */
     public function index()
     {
-        return view('citizens.index');
-    }
-
-    public function list()
-    {
-        return Citizen::with('village.panchayat.block.state')->get();
+        $citizens = Citizen::with('village.panchayat.block.state')->get();
+        return view('citizens.index', compact('citizens'));
     }
 
     /**
